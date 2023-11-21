@@ -40,7 +40,11 @@ auteur_show_livres:
   path: /auteurs/{id}/livres
   controller: App\Controller\AuteurController::showAuteurLivres
 
-livre_genre:
+livre_genres:
   path: /livres/{id}/genres
   controller: App\Controller\LivreController::showGenre
+
+livres_genre:
+  path: /genres/{id}/livres
+  controller: App\Controller\GenreController::showGenreLivres
 

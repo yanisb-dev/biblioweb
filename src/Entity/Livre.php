@@ -31,7 +31,7 @@ class Livre
     #[ORM\JoinColumn(name: "idauteur", referencedColumnName: "id")]
     private ?Auteur $auteur;
 
-    #[ORM\ManyToMany(targetEntity: "App\Entity\Genre")]
+    #[ORM\ManyToMany(targetEntity: "App\Entity\Genre", inversedBy: "livres")]
     #[ORM\JoinTable(name: "appartenir")]
     #[ORM\JoinColumn(name: "idlivre", referencedColumnName: "id")]
     #[ORM\InverseJoinColumn(name: "idgenre", referencedColumnName: "id")]
@@ -120,6 +120,7 @@ class Livre
     public function addGenre(Genre $genre): static
     {
         if (!$this->genres->contains($genre)) {
+            $genre->addLivre($this);
             $this->genres->add($genre);
         }
 

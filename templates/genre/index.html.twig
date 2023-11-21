@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %} {% block title %}Livres de {{ genre.libelle }}{%
+endblock %} {% block body %}
+<h2>Livres contenant le genre {{ genre.libelle }}</h2>
+{% for livre in livres %}
+<li>{{ livre.titre }}</li>
+{% endfor %} {% endblock %}

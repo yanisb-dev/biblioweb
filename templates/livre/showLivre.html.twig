@@ -2,8 +2,8 @@
 <h1>{{ titre }}</h1>
 <p>Titre du livre : {{ livre.titre }}</p>
 <im>
-  Genre du livre : {% for genre in livre.genres %} {{ genre.libelle }} {%
-  endfor%} #}
+  <a href="{{ path("livre_genres", { id: livre.id }) }}"> Genres du livre : </a>{% for
+  genre in livre.genres %} <a href="{{path('livres_genre', {id: genre.id})}}">{{ genre.libelle }} </a> {% endfor%} #}
 </im>
 <strong> Auteur : </strong> {{ livre.auteur.prenom }}
 

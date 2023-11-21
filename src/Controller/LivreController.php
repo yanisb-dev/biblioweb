@@ -52,6 +52,7 @@ class LivreController extends AbstractController
     {
 
         $genres = $doctrine->getRepository(Livre::class)->find($id)->getGenres();
-        return $this->render('showGenres.html.twig', ['genres' => $genres]);
+        $livre = $doctrine->getRepository(Livre::class)->find($id);
+        return $this->render('livre/showGenres.html.twig', ['genres' => $genres, 'livre' => $livre]);
     }
 }
