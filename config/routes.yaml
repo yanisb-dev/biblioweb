@@ -44,8 +44,3 @@ livre_genre:
   path: /livres/{id}/genres
   controller: App\Controller\LivreController::showGenre
 
-
-auteur_show_search:
-  path: auteurs/{nomAuteur}/livre
-  controller: App\Controller\AuteurController::showAuteurLivresByNom
-  
