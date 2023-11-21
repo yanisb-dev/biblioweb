@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %} {% block body %}
+<h1>{{ titre }}</h1>
+<p>Titre du livre : {{ livre.titre }}</p>
+<im>
+  Genre du livre : {% for genre in livre.genres %} {{ genre.libelle }} {%
+  endfor%} #}
+</im>
+<strong> Auteur : </strong> {{ livre.auteur.prenom }}
+
+{% endblock body %}

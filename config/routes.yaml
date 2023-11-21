@@ -1,5 +1,51 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+# controllers:
+#     resource:
+#         path: ../src/Controller/
+#         namespace: App\Controller
+#     type: attribute
+
+index:
+  path: /
+  controller: App\Controller\DefaultController::accueil
+
+connexion:
+  path: /connexion
+  controller: App\Controller\DefaultController::connexion
+
+accueil:
+  path: /accueil
+  controller: App\Controller\DefaultController::accueil
+
+recherche:
+  path: /recherche
+  controller: App\Controller\DefaultController::recherche
+
+informationspratiques:
+  path: /informationspratiques
+  controller: App\Controller\DefaultController::informationspratiques
+
+livres:
+  path: /livres
+  controller: App\Controller\LivreController::livres
+
+auteurs:
+  path: /auteurs
+  controller: App\Controller\AuteurController::auteurs
+
+livre_show:
+  path: /livres/{id}
+  controller: App\Controller\LivreController::showLivre
+
+auteur_show_livres:
+  path: /auteurs/{id}/livres
+  controller: App\Controller\AuteurController::showAuteurLivres
+
+livre_genre:
+  path: /livres/{id}/genres
+  controller: App\Controller\LivreController::showGenre
+
+
+auteur_show_search:
+  path: auteurs/{nomAuteur}/livre
+  controller: App\Controller\AuteurController::showAuteurLivresByNom
+  

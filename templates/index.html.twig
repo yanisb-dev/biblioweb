@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %} {% block title %} {{ titre }} {% endblock title
+%} {% block body %}
+<ul>
+  <li>
+    <a href="{{ path('informationspratiques') }}">Informations pratiques</a>
+  </li>
+  <li><a href="{{ path('recherche') }}">Recherche</a></li>
+  <li><a href="{{ path('livres') }}">Les Livres</a></li>
+  <li><a href="{{ path('auteurs') }}">Les Auteurs</a></li>
+  <li><a href="{{ path('connexion') }}">Se connecter</a></li>
+</ul>
+{% endblock body %}
