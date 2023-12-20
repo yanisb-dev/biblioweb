@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Exemplaire;
 use App\Entity\Livre;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -45,6 +46,15 @@ class LivreController extends AbstractController
         } else {
             return $this->render('livre/showLivre.html.twig', ['titre' => 'Détail du livre', 'livre' => $livre]);
         }
+    }
+
+    public function showExemplaires(ManagerRegistry $doctrine)
+    {
+
+        $exemplaires = $doctrine->getRepository(Exemplaire::class)->findAll();
+        $livres = $doctrine->getRepository(Livre::class)->findAll();
+
+        return $this->render('livre/showExemplaires.html.twig', ['livres' => $livres, 'exemplaires' => $exemplaires]);
     }
 
 

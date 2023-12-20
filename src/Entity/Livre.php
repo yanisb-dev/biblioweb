@@ -37,6 +37,11 @@ class Livre
     #[ORM\InverseJoinColumn(name: "idgenre", referencedColumnName: "id")]
     private ?Collection $genres = null;
 
+    public function __toString()
+    {
+        return $this->getTitre() . ' ' . $this->getResume();
+    }
+
 
     public function __construct()
     {
